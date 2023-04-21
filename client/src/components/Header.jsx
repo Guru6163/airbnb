@@ -1,6 +1,10 @@
+
 import { Link } from "react-router-dom"
 
+
 function Header() {
+  const user = JSON.parse(window.localStorage.getItem("userInfo"))
+  console.log(user)
   return (
     <header className=" flex justify-between">
     <a className="flex items-center gap-1">
@@ -53,6 +57,7 @@ function Header() {
         </svg>
 
       </div>
+      {user && (<div>{user.name}</div>) }
     </Link>
   </header>
   )
